@@ -22,6 +22,7 @@ public:
     //==============================================================================
     DawTestAudioProcessor();
     ~DawTestAudioProcessor() override;
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
@@ -61,4 +62,7 @@ private:
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DawTestAudioProcessor)
 
      float gain = 1.0f;
+
+    juce::AudioProcessorValueTreeState apvts {*this, nullptr, "PARAMETERS", createParameterLayout()};
+
 };
