@@ -1,2 +1,4 @@
 **/.localhistory/
-.localhistory/
+.history/
+/Source/.history/**
+/Source/**/.history/
